@@ -1,0 +1,31 @@
+{
+    "folder-color.pathColors": [
+        {
+            "folderPath": "edu\\uploads\\",
+            "color": "foldercolorizer.color_0000cc"
+        },
+        {
+            "folderPath": "edu\\includes\\",
+            "color": "foldercolorizer.color_006699"
+        }
+    ],
+    "folder-customization.folders": [
+        {
+            "path": "edu\\includes\\",
+            "color": "foldercustomization.AnsiColor51",
+            "badge": "😀"
+        },
+        {
+            "path": "edu\\adm\\",
+            "color": "foldercustomization.AnsiColor161"
+        },
+        {
+            "path": "edu\\user\\",
+            "color": "foldercustomization.AnsiColor82"
+        },
+        {
+            "path": "edu\\professor\\",
+            "color": "foldercustomization.AnsiColor192"
+        }
+    ]
+}

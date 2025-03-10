@@ -8,12 +8,21 @@
       </div>
       <div class="navbar-content">
         <ul class="pc-navbar">
+        <br>
+        <li class="pc-item">
+            <a href="https://coinz.echotec.online/home/" target="_blank"  class="pc-link">
+              <span class="pc-micon"><i class="ti ti-coin"></i></span>
+              <span class="pc-mtext">Coinz</span>
+            </a>
+          </li>
+          <hr>
           <li class="pc-item">
             <a href="/edu/dashboard/index.php" class="pc-link">
               <span class="pc-micon"><i class="ti ti-dashboard"></i></span>
               <span class="pc-mtext">Dashboard</span>
             </a>
           </li>
+
 
           <li class="pc-item pc-caption">
             <label>Cadastros</label>
@@ -39,7 +48,7 @@
           </li>
 
           <li class="pc-item pc-caption">
-            <label>Pages</label>
+            <label>Páginas</label>
             <i class="ti ti-news"></i>
           </li>
           <li class="pc-item">
@@ -51,17 +60,17 @@
           <li class="pc-item">
             <a href="../pages/register-v3.html" class="pc-link">
               <span class="pc-micon"><i class="ti ti-user-plus"></i></span>
-              <span class="pc-mtext">Register</span>
+              <span class="pc-mtext">teste</span>
             </a>
           </li>
 
           <li class="pc-item pc-caption">
-            <label>Other</label>
+            <label>Menus</label>
             <i class="ti ti-brand-chrome"></i>
           </li>
           <li class="pc-item pc-hasmenu">
             <a href="#!" class="pc-link"><span class="pc-micon"><i class="ti ti-menu"></i></span><span class="pc-mtext">Menu
-                levels</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+                cascada</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
             <ul class="pc-submenu">
               <li class="pc-item"><a class="pc-link" href="#!">Level 2.1</a></li>
               <li class="pc-item pc-hasmenu">
@@ -97,7 +106,7 @@
           <li class="pc-item">
             <a href="../other/sample-page.html" class="pc-link">
               <span class="pc-micon"><i class="ti ti-brand-chrome"></i></span>
-              <span class="pc-mtext">Sample page</span>
+              <span class="pc-mtext">Teste2</span>
             </a>
           </li>
         </ul>

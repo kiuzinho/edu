@@ -17,11 +17,11 @@
 </style>
 
 <script>
-  // Máscara de CPF (permite digitar, colar e apagar)
+  // MAscara de CPF (permite digitar, colar e apagar)
   function mascaraCPF(input) {
     let cpf = input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
 
-    // Aplica a máscara
+    // Aplica a mascara
     if (cpf.length > 3 && cpf.length <= 6) {
       cpf = `${cpf.slice(0, 3)}.${cpf.slice(3)}`;
     } else if (cpf.length > 6 && cpf.length <= 9) {
@@ -33,18 +33,18 @@
     input.value = cpf;
   }
 
-  // Validação do CPF
+  // Valida o CPF
   function validarCPF(cpf) {
     const error = document.getElementById('cpf-error');
 
-    // Verifica se tem 11 dígitos numéricos
+    // Verifica se tem 11 dígitos 
     cpf = cpf.replace(/\D/g, '');
     if (cpf.length !== 11) {
       error.style.display = 'inline';
       return false;
     }
 
-    // Validação dos dígitos verificadores
+    //dígitos verificadores
     let soma = 0;
     for (let i = 0; i < 9; i++) {
       soma += parseInt(cpf[i]) * (10 - i);
@@ -76,25 +76,25 @@
   function enviarCadastro() {
   const dados = new FormData();
 
-  // Formulário 1: Dados Principais
+  // Form1: Dados Principais
   const formGeral1 = document.getElementById('form-geral1');
   Array.from(formGeral1.elements).forEach(input => {
     if (input.name) dados.append(input.name, input.value);
   });
 
-  // Formulário 2: CPF e RG
+  // Form2: CPF e RG
   const formGeral2 = document.getElementById('form-geral2');
   Array.from(formGeral2.elements).forEach(input => {
     if (input.name) dados.append(input.name, input.value);
   });
 
-  // Formulário 3: Acesso
+  // Form3: Acesso
   const formAcesso = document.getElementById('form-acesso');
   Array.from(formAcesso.elements).forEach(input => {
     if (input.name) dados.append(input.name, input.value);
   });
 
-  // Formulário 4: Localização
+  // Form4 Localização
   const formLocalizacao = document.getElementById('form-localizacao');
   Array.from(formLocalizacao.elements).forEach(input => {
     if (input.name) dados.append(input.name, input.value);
@@ -110,7 +110,7 @@
   }
 
   // Requisição AJAX
-  fetch('cadastrar_aluno.php', {
+  fetch('cad_aluno.php', {
     method: 'POST',
     body: dados
   })
@@ -158,7 +158,7 @@
           <div class="row align-items-center">
             <div class="col-md-12">
               <ul class="breadcrumb">
-                <li class="breadcrumb-item"><a href="../dashboard/index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="../dashboard/index.php">Home</a></li>
                 <li class="breadcrumb-item"><a href="javascript: void(0)">Cadastros</a></li>
                 <li class="breadcrumb-item" aria-current="page">Cadastros alunos</li>
               </ul>

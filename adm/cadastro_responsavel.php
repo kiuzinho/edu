@@ -1,9 +1,5 @@
-
-
 <?php include '../includes/header.php'; ?>
 <?php include '../includes/db.php'; ?>
-
-
 <style>
   .text-danger {
     color: #dc3545;
@@ -73,62 +69,61 @@
     return true;
   }
 
-
-  //Função para associar botão aos 4 formularios
+  // Função para associar botão aos 4 formulários
   function enviarCadastro() {
-  const dados = new FormData();
+    const dados = new FormData();
 
-  // Formulário 1: Dados Principais
-  const formGeral1 = document.getElementById('form-geral1');
-  Array.from(formGeral1.elements).forEach(input => {
-    if (input.name) dados.append(input.name, input.value);
-  });
+    // Formulário 1: Dados Principais
+    const formGeral1 = document.getElementById('form-geral1');
+    Array.from(formGeral1.elements).forEach(input => {
+      if (input.name) dados.append(input.name, input.value);
+    });
 
-  // Formulário 2: CPF e RG
-  const formGeral2 = document.getElementById('form-geral2');
-  Array.from(formGeral2.elements).forEach(input => {
-    if (input.name) dados.append(input.name, input.value);
-  });
+    // Formulário 2: CPF e RG
+    const formGeral2 = document.getElementById('form-geral2');
+    Array.from(formGeral2.elements).forEach(input => {
+      if (input.name) dados.append(input.name, input.value);
+    });
 
-  // Formulário 3: Acesso
-  const formAcesso = document.getElementById('form-acesso');
-  Array.from(formAcesso.elements).forEach(input => {
-    if (input.name) dados.append(input.name, input.value);
-  });
+    // Formulário 3: Acesso
+    const formAcesso = document.getElementById('form-acesso');
+    Array.from(formAcesso.elements).forEach(input => {
+      if (input.name) dados.append(input.name, input.value);
+    });
 
-  // Formulário 4: Localização
-  const formLocalizacao = document.getElementById('form-localizacao');
-  Array.from(formLocalizacao.elements).forEach(input => {
-    if (input.name) dados.append(input.name, input.value);
-  });
+    // Formulário 4: Localização
+    const formLocalizacao = document.getElementById('form-localizacao');
+    Array.from(formLocalizacao.elements).forEach(input => {
+      if (input.name) dados.append(input.name, input.value);
+    });
 
-  // Validação de senhas
-  const senha = dados.get('senha');
-  const confirmarSenha = dados.get('confirmarSenha');
-  
-  if (senha !== confirmarSenha) {
-    alert('As senhas não coincidem!');
-    return;
-  }
+    // Validação de senhas
+    const senha = dados.get('senha');
+    const confirmarSenha = dados.get('confirmarSenha');
 
-  // Requisição AJAX
-  fetch('cadastrar_aluno.php', {
-    method: 'POST',
-    body: dados
-  })
-  .then(response => response.json())
-  .then(resultado => {
-    if (resultado.sucesso) {
-      alert('Aluno cadastrado!');
-      formGeral1.reset();
-      formGeral2.reset();
-      formAcesso.reset();
-      formLocalizacao.reset();
-    } else {
-      alert('Erro: ' + resultado.erro);
+    if (senha !== confirmarSenha) {
+      alert('As senhas não coincidem!');
+      return;
     }
-  });
-}
+
+    // Requisição AJAX
+    fetch('cadastrar_aluno.php', {
+        method: 'POST',
+        body: dados
+      })
+      .then(response => response.json())
+      .then(resultado => {
+        if (resultado.sucesso) {
+          alert('Aluno cadastrado!');
+          formGeral1.reset();
+          formGeral2.reset();
+          formAcesso.reset();
+          formLocalizacao.reset();
+        } else {
+          alert('Erro: ' + resultado.erro);
+        }
+      });
+  }
 </script>
 
 <!-- [Body] Start -->
@@ -142,14 +137,13 @@
   </div>
   <!-- [ Pre-loader ] End -->
 
-    <!-- [ Sidebar Menu ] start -->
-        <?php include '../includes/sidebar_menu.php'; ?>
-    <!-- [ Sidebar Menu ] end --> 
+  <!-- [ Sidebar Menu ] start -->
+  <?php include '../includes/sidebar_menu.php'; ?>
+  <!-- [ Sidebar Menu ] end -->
 
-    <!-- [ Header Topbar ] start -->
-        <?php include '../includes/header_topbar.php'; ?>
-    <!-- [ Header ] end -->
-
+  <!-- [ Header Topbar ] start -->
+  <?php include '../includes/header_topbar.php'; ?>
+  <!-- [ Header ] end -->
 
   <!-- [ Main Content ] start -->
   <section class="pc-container">
@@ -162,12 +156,12 @@
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../dashboard/index.html">Home</a></li>
                 <li class="breadcrumb-item"><a href="javascript: void(0)">Cadastros</a></li>
-                <li class="breadcrumb-item" aria-current="page">Cadastros alunos</li>
+                <li class="breadcrumb-item" aria-current="page">Responsáveis</li>
               </ul>
             </div>
             <div class="col-md-12">
               <div class="page-header-title">
-                <h2 class="mb-0">Cadastrar novo aluno</h2>
+                <h2 class="mb-0">Cadastrar novo Responsável</h2>
               </div>
             </div>
           </div>
@@ -188,7 +182,6 @@
                   </div>
                   <div class="col-sm-6 text-sm-end mt-3 mt-sm-0">
                     <button type="button" class="btn btn-success" onclick="enviarCadastro()">Cadastrar</button>
-                    
                   </div>
                 </div>
               </div>
@@ -211,7 +204,6 @@
                       <label for="demo-text-input" class="form-label">Nacionalidade</label>
                       <input class="form-control" name="nacionalidade" type="text" value="Brasileiro" id="demo-text-input">
                     </div>
-
                   </form>
                 </div>
                 <div class="col-md-6">
@@ -243,7 +235,6 @@
               <br>
               <form id="form-acesso">
                 <div class="row">
-                
                   <div class="form-group col-md-6">
                     <label class="form-label" for="inputEmail4">Email</label>
                     <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
@@ -278,76 +269,106 @@
                     <span id="senha-error" class="text-danger"></span>
                   </div>
               </form>
-              </div>
-              <hr>
-              <h5 class="mt-2">Localização</h5>
-              <br>
-              <br>
-              <form id="form-localizacao">
-                <div class="form-group">
-                  <label class="form-label" for="inputAddress">Endereço</label>
-                  <input type="text" name="endereco" class="form-control" id="inputAddress" placeholder="Rua dos Bobos, nº 0">
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="inputAddress2">Complemento</label>
-                  <input type="text" name="complemento" class="form-control" id="inputAddress2" placeholder="Apartamento, hotel, casa, etc.">
-                </div>
-                <div class="row">
-                  <div class="form-group col-md-6">
-                    <label class="form-label" for="inputCity">Cidade</label>
-                    <input type="text" name="cidade" class="form-control" id="inputCity">
-                  </div>
-                  <div class="form-group col-md-4">
-                    <label class="form-label" for="inputState">Estado</label>
-                    <select name="estado" id="inputState" class="form-select">
-                      <option value="PE">Pernambuco (PE)</option>
-                      <option value="AC">Acre (AC)</option>
-                      <option value="AL">Alagoas (AL)</option>
-                      <option value="AP">Amapá (AP)</option>
-                      <option value="AM">Amazonas (AM)</option>
-                      <option value="BA">Bahia (BA)</option>
-                      <option value="CE">Ceará (CE)</option>
-                      <option value="DF">Distrito Federal (DF)</option>
-                      <option value="ES">Espírito Santo (ES)</option>
-                      <option value="GO">Goiás (GO)</option>
-                      <option value="MA">Maranhão (MA)</option>
-                      <option value="MT">Mato Grosso (MT)</option>
-                      <option value="MS">Mato Grosso do Sul (MS)</option>
-                      <option value="MG">Minas Gerais (MG)</option>
-                      <option value="PA">Pará (PA)</option>
-                      <option value="PB">Paraíba (PB)</option>
-                      <option value="PR">Paraná (PR)</option>
-                      <option value="PI">Piauí (PI)</option>
-                      <option value="RJ">Rio de Janeiro (RJ)</option>
-                      <option value="RN">Rio Grande do Norte (RN)</option>
-                      <option value="RS">Rio Grande do Sul (RS)</option>
-                      <option value="RO">Rondônia (RO)</option>
-                      <option value="RR">Roraima (RR)</option>
-                      <option value="SC">Santa Catarina (SC)</option>
-                      <option value="SP">São Paulo (SP)</option>
-                      <option value="SE">Sergipe (SE)</option>
-                      <option value="TO">Tocantins (TO)</option>
+            </div>
+            <hr>
+            <h5 class="mt-3">Vincular estudante</h5>
+            <br>
+            <form id="form-acesso">
+              <div class="row">
+                <div class="form-group row">
+                  <label class="col-form-label col-lg-3 col-sm-12 text-lg-end">Selecione um ou mais estudantes</label>
+                  <div class="col-lg-12 col-md-11 col-sm-12">
+                    <select
+                      class="form-control"
+                      name="choices-multiple-remove-button"
+                      id="choices-multiple-remove-button"
+                      multiple>
+                      <?php
+                      $stmt = $pdo->query("SELECT id, nome FROM alunos");
+                      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        echo '<option value="' . $row['id'] . '">' . $row['nome'] . '</option>';
+                      }
+                      ?>
                     </select>
                   </div>
-                  <div class="form-group col-md-2">
-                    <label class="form-label" for="inputZip">CEP</label>
-                    <input name="cep" type="text" class="form-control" id="inputZip">
-                  </div>
                 </div>
-                </form>
-
-            </div>
-            <button type="submit" onclick="enviarCadastro()" class="btn btn-success">Salvar</button>
-            
+              </div>
+            </form>
+            <hr>
+            <h5 class="mt-2">Localização</h5>
+            <br>
+            <br>
+            <form id="form-localizacao">
+              <div class="form-group">
+                <label class="form-label" for="inputAddress">Endereço</label>
+                <input type="text" name="endereco" class="form-control" id="inputAddress" placeholder="Rua dos Bobos, nº 0">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="inputAddress2">Complemento</label>
+                <input type="text" name="complemento" class="form-control" id="inputAddress2" placeholder="Apartamento, hotel, casa, etc.">
+              </div>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label class="form-label" for="inputCity">Cidade</label>
+                  <input type="text" name="cidade" class="form-control" id="inputCity">
+                </div>
+                <div class="form-group col-md-4">
+                  <label class="form-label" for="inputState">Estado</label>
+                  <select name="estado" id="inputState" class="form-select">
+                    <option value="PE">Pernambuco (PE)</option>
+                    <option value="AC">Acre (AC)</option>
+                    <option value="AL">Alagoas (AL)</option>
+                    <option value="AP">Amapá (AP)</option>
+                    <option value="AM">Amazonas (AM)</option>
+                    <option value="BA">Bahia (BA)</option>
+                    <option value="CE">Ceará (CE)</option>
+                    <option value="DF">Distrito Federal (DF)</option>
+                    <option value="ES">Espírito Santo (ES)</option>
+                    <option value="GO">Goiás (GO)</option>
+                    <option value="MA">Maranhão (MA)</option>
+                    <option value="MT">Mato Grosso (MT)</option>
+                    <option value="MS">Mato Grosso do Sul (MS)</option>
+                    <option value="MG">Minas Gerais (MG)</option>
+                    <option value="PA">Pará (PA)</option>
+                    <option value="PB">Paraíba (PB)</option>
+                    <option value="PR">Paraná (PR)</option>
+                    <option value="PI">Piauí (PI)</option>
+                    <option value="RJ">Rio de Janeiro (RJ)</option>
+                    <option value="RN">Rio Grande do Norte (RN)</option>
+                    <option value="RS">Rio Grande do Sul (RS)</option>
+                    <option value="RO">Rondônia (RO)</option>
+                    <option value="RR">Roraima (RR)</option>
+                    <option value="SC">Santa Catarina (SC)</option>
+                    <option value="SP">São Paulo (SP)</option>
+                    <option value="SE">Sergipe (SE)</option>
+                    <option value="TO">Tocantins (TO)</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-2">
+                  <label class="form-label" for="inputZip">CEP</label>
+                  <input name="cep" type="text" class="form-control" id="inputZip">
+                </div>
+              </div>
+            </form>
           </div>
+          <button type="submit" onclick="enviarCadastro()" class="btn btn-success">Salvar</button>
         </div>
       </div>
-      <!-- [ form-element ] end -->
+    </div>
+    <!-- [ form-element ] end -->
     </div>
     <!-- [ Main Content ] end -->
     </div>
   </section>
   <!-- [ Main Content ] end -->
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var multipleCancelButton = new Choices('#choices-multiple-remove-button', {
+        removeItemButton: true
+      });
+    });
+  </script>
   <?php include '../includes/footer.php'; ?>
-
-  </html>
+</body>
+</html>

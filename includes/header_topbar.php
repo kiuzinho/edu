@@ -300,7 +300,7 @@
               data-bs-auto-close="outside"
               aria-expanded="false">
               <img src="../assets/images/user/avatar-2.jpg" alt="user-image" class="user-avtar">
-              <span>Stebin Ben</span>
+              <span>Akiozinho</span>
             </a>
             <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown">
               <div class="dropdown-header">
@@ -309,10 +309,10 @@
                     <img src="../assets/images/user/avatar-2.jpg" alt="user-image" class="user-avtar wid-35">
                   </div>
                   <div class="flex-grow-1 ms-3">
-                    <h6 class="mb-1">Stebin Ben</h6>
+                    <h6 class="mb-1">Akiozinho</h6>
                     <span>UI/UX Designer</span>
                   </div>
-                  <a href="#!" class="pc-head-link bg-transparent"><i class="ti ti-power text-danger"></i></a>
+                  <a href="/edu/logout.php " class="pc-head-link bg-transparent"><i class="ti ti-power text-danger"></i></a>
                 </div>
               </div>
               <ul class="nav drp-tabs nav-fill nav-tabs" id="mydrpTab" role="tablist">
@@ -325,7 +325,7 @@
                     type="button"
                     role="tab"
                     aria-controls="drp-tab-1"
-                    aria-selected="true"><i class="ti ti-user"></i> Profile</button>
+                    aria-selected="true"><i class="ti ti-user"></i> Perfil</button>
                 </li>
                 <li class="nav-item" role="presentation">
                   <button
